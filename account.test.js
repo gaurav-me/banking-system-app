@@ -41,6 +41,14 @@ describe("Bank account", () => {
       expect(newBalance).toEqual(0);
       expect(userAccount.balance).toEqual(newBalance);
     });
+
+    it("should throw error if input is not integer", () => {
+      const userAccount = new Account("testUser");
+      const depositAmount = "5";
+      expect(() => {
+        userAccount.deposit(depositAmount);
+      }).toThrowError("incorrect input");
+    });
   });
 
   describe("statement", () => {

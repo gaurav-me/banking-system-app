@@ -6,6 +6,9 @@ class Account {
   }
 
   deposit(amount) {
+      if (typeof(amount) !== "number") {
+          throw new Error("incorrect input");
+      }
     this.balance = this.balance + amount;
     const today = new Date();
     this.transactionHistory.push({
@@ -25,7 +28,7 @@ class Account {
       this.transactionHistory.push({
         balance: this.balance,
         amount: amount,
-        date: today.getDay()
+        date: today.toDateString()
       });
       return this.balance;
     }
