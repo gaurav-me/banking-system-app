@@ -6,9 +6,9 @@ class Account {
   }
 
   deposit(amount) {
-      if (typeof(amount) !== "number") {
-          throw new Error("incorrect input");
-      }
+    if (typeof amount !== "number") {
+      throw new Error("incorrect input");
+    }
     this.balance = this.balance + amount;
     const today = new Date();
     this.transactionHistory.push({
@@ -20,6 +20,9 @@ class Account {
   }
 
   withdrawal(amount) {
+    if (typeof amount !== "number") {
+      throw new Error("incorrect input");
+    }
     if (this.balance < amount) {
       throw new Error("You do not have sufficient balance.");
     } else {

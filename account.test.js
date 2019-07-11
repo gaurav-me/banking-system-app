@@ -63,7 +63,7 @@ describe("Bank account", () => {
       const newBalance = userAccount.deposit(50);
       const history = userAccount.statement();
 
-      expect(history).toEqual("Date Amount Balance\nWed Jul 10 2019 50 50");
+      expect(history).toEqual("Date Amount Balance\nThu Jul 11 2019 50 50");
     });
 
     it("should return the balance", () => {
